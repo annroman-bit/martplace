@@ -1,5 +1,160 @@
 @import 'vars';
 @import 'global';
-@import 'fonts';
+
+
+// start header
+.header__top{
+  background-color: #eef1f3;
+}
+.header__top-inner{
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .header__logo{
+    display: flex;
+    align-items: center;
+    &-name{
+      font-size: 30px;
+      line-height: 28px;
+      font-weight: 700;
+      color: #000;
+      span{
+        color: $blue;
+      }
+    }
+    a{
+      margin: 0 5px;
+    }
+  }
+}
+.header__button{
+  margin-left: auto;
+  width: 140px;
+  height: 36px;
+  background-color: $blue;
+  border-radius: 30px;
+  text-align: center;
+  margin-right: 50px;
+  a{
+    color: #fff;
+    font-size: 14px;
+    line-height: 28px;
+    font-weight: 400;
+  }
+}
+.header__icons{
+  width: 150px;
+  margin-right: 45px;
+  .icons__list{
+    display: flex;
+    justify-content: space-between;
+    .lnr{
+      display: block;
+      position: relative;
+      font-size: 20px;  
+      color: rgb(126, 143, 161);
+     }
+  }
+}
+.lnr::after{
+  position: absolute;
+ color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  height: 22px;
+  width: 22px;
+text-align: center;
+  padding-top: 3px;
+  font-family: 'Quicksand', sans-serif;
+  border-radius: 50%;
+  right: -18px;
+  top: -10px;
+}
+.lnr-alarm::after{
+  content: "25";
+  width: 27px;
+  border-radius: 13px;
+  background-color: #ff6a6c;
+}
+.lnr-envelope::after{  
+  content: "6";  
+  background-color: #62d03b;
+}
+.lnr-cart::after{  
+  content: "2";
+  background-color: $blue;
+}
+.header__client-avatar{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #7c7979;
+  margin-right: 20px;
+}
+.header__client-name{
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 500;
+  color: #333333;
+}
+.header__client-depo{
+  color: $blue;
+  font-size: 15px;
+  line-height: 22px;
+  font-weight: 400;
+}
+.header__menu-inner{
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .menu{
+    width: 500px;
+  }
+  .menu__list{
+    display: flex;
+    justify-content: space-between;
+    & li a{
+      text-transform: uppercase;
+      font-size: 15px;
+      line-height: 42px;
+      font-weight: 500;
+      color: #333333;
+    }
+  }
+}
+.menu__search form{
+  display: flex;
+  width: 360px;
+  height: 45px;
+  position: relative;
+  input{
+    display: block;
+    width: 100%;
+    border-radius: 23px;
+    font-size: 15px;
+    line-height: 30px;
+    font-weight: 400;
+    padding-left: 25px;
+    &::placeholder{
+      color: #898f96;
+    }
+  }
+  button{
+    width: 70px;
+    height: 45px;
+    border-radius: 23px; 
+    border: none;
+    background-color: $blue;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+  }
+}
+.lnr-magnifier{
+  color: #fff;
+}
+// end header
 
 
