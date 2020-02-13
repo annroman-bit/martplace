@@ -364,7 +364,7 @@ box-shadow: 0px 2px 4px 0px rgba(108, 111, 115, 0.1);
   }
   &-button{
     display: flex;
-    text-align: center;
+    text-align: center;   
   }
   &-button-right{
     background-color: #7347c1;
@@ -381,6 +381,33 @@ box-shadow: 0px 2px 4px 0px rgba(108, 111, 115, 0.1);
     padding-top: 7px;
   }
 }
+.weekly__slider{
+  position: relative;
+}
+.slick-prev.slick-arrow{
+  position: absolute;
+  right: 93px;
+  top: -127px;
+  height: 45px;
+  width: 45px;
+  border: none;
+  color: transparent;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+}
+.slick-next.slick-arrow{
+  position: absolute;
+  right: 30px;
+  top: -127px;
+  height: 45px;
+  width: 45px;
+  border: none;
+  color: transparent;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+}
 .weekly__big{
   width: 100%;
   height: 450px;
@@ -388,50 +415,58 @@ box-shadow: 0px 2px 4px 0px rgba(108, 111, 115, 0.1);
   display: flex;
   border-radius: 4px;
   box-shadow: 0px 2px 4px 0px rgba(108, 111, 115, 0.1);
+  position: relative;
   &-left{
     height: 100%;
-    min-width: 555px;
+    width: 555px;
     background-color: #4e5760;
   }
   &-right{
-    padding: 40px 45px 0 50px;
-    &-title{
-      font-size: 24px;
-      font-weight: 500;
-      margin-bottom: 20px;
-    }
-    &-user{
-      font-size: 15px;
-      color: #000;
-      padding-left: 40px;
-      position: relative;
-      margin-bottom: 35px;
-    }
-    &-user::before{
-      position: absolute;
-      content: "";
-      width: 31px;
-      height: 31px;
-      background-color: #7347c1;
-      border-radius: 50%;
-      left: 0;
-      top: 0;
-    }
-    &-user::after{
-      position: absolute;
-      content: "";
-      width: 99px;
-      height: 16px;
-      background-image: url(../images/icons/wp.png);
-      left: 120px;
-      top: 6px;
-    }
-    &-links{
-      margin: 35px 0;
-      &-list{
-        display: flex;
-      }      
-    }
+    position: absolute;
+    right: 0;
+    top: 0;    
+    width: 585px;
+    padding: 40px 45px 25px 50px;  
+    z-index: 1000;  
+  }
+}
+.weekly__big-right{
+  &-title{
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+  &-user{
+    font-size: 15px;
+    color: #000;
+    padding-left: 40px;
+    position: relative;
+    margin-bottom: 35px;
+  }
+  &-user::before{
+    position: absolute;
+    content: "";
+    width: 31px;
+    height: 31px;
+    background-color: #7347c1;
+    border-radius: 50%;
+    left: 0;
+    top: 0;
+  }
+  &-user::after{
+    position: absolute;
+    content: "";
+    width: 99px;
+    height: 16px;
+    background-image: url(../images/icons/wp.png);
+    left: 120px;
+    top: 6px;
+  }
+  &-links{
+    margin: 35px 0;
+    &-list{
+      display: flex;
+    }      
   }
 }
 .weekly__big-right-links-list li a{
@@ -445,11 +480,11 @@ box-shadow: 0px 2px 4px 0px rgba(108, 111, 115, 0.1);
   border-radius: 15px;
 }
 .weekly__big-right-footer{
-  height: 80px;
-  padding-top: 20px;
+  height: 80px;  
   border-top: 1px solid #ececec;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .weekly__big-right-footer-price{
   width: 100px;
@@ -461,12 +496,165 @@ box-shadow: 0px 2px 4px 0px rgba(108, 111, 115, 0.1);
   margin-right: 20px;
 }
 .weekly__big-right-footer-icons{
-  margin-right: auto;
+  margin-right: auto;  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.weekly__big-right-footer-icons img{  
+  width: 16px;
+  height: 16px;
 }
 .weekly__big-right-footer-icons span{
+  display: block;
   margin: 0 10px;
 }
 .weekly__big-right-footer-icons span:last-child{
   color: $blue;
 }
 // end weekly
+// start newest
+.newest{
+  background-color: #f6f7fb;
+  min-height: 1730px;
+  padding: 120px 0;
+}
+.newest__top{
+  height: 110px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  border-radius: 4px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 2px 4px 0px rgba(108, 111, 115, 0.1);
+  margin-bottom: 30px;
+  &-filter{
+    margin-left: auto;
+    margin-right: 25px;
+    color: rgb(163, 177, 196);
+  }
+  &-button{
+    margin-top: 20px;
+  }
+}
+.newest__menu{
+  height: 93px;
+  padding: 30px;
+  border-radius: 4px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 2px 4px 0px rgba(108, 111, 115, 0.1);
+  margin-bottom: 50px;
+  &-list{
+    display: flex;      
+    & li{
+      margin-right: 10px;
+      padding: 0 20px;
+      background-color: #f1f3f6;
+      border-radius: 15px;
+      transition: all 0.3s;
+      cursor: pointer;
+      &:hover{
+        background-color: $blue;        
+      }
+      & a{
+        color: #747b86;
+        transition: all 0.3s;
+        &:hover{
+          color: #fff;         
+        }
+      }
+    }  
+  }
+}
+.newest__items{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.newest__item{
+  width: 360px;
+  min-height: 530px;
+  border-radius: 4px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 2px 4px 0px rgba(108, 111, 115, 0.1);
+  margin-top: 30px;
+  &-image{
+    height: 230px;    
+    &:hover{
+      background-image: url(../images/newest-bg.jpg);      
+    }    
+  }  
+}
+.newest__info{
+  padding: 30px;
+  &-title{
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 25px;
+  }
+  &-author{
+    font-size: 15px;
+    color: #000;
+    padding:0 40px;
+    position: relative;
+    margin-bottom: 40px;
+  }
+  &-author::before{
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 30px;
+    background-color: #7347c1;
+    border-radius: 50%;
+    left: 0;
+    top: 0;
+  }
+  &-author::after{
+    position: absolute;
+    content: "";
+    width: 99px;
+    height: 16px;
+    background-image: url(../images/icons/wp.png);
+    left: 150px;
+    top: 6px;
+  }
+}
+.newest__item-footer{
+  height: 60px;
+  padding: 16px 30px;
+  border-top: 1px solid #ececec;
+  display: flex;  
+  &-price{    
+    height: 30px;
+    background-color: #e6f1fd;
+    border-radius: 15px;
+    color: $blue;    
+    margin-right: 15px;
+    padding: 0 17px;
+  }
+  &-like {
+    margin-right: auto;
+    span{
+      margin-left: 6px;
+    }
+  }
+}
+.newest__item-footer-cart span{
+  margin-left: 6px;
+  color: $blue;
+}
+
+
+
+
+
+
+
+
+.BG {
+  border-radius: 4px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 2px 4px 0px rgba(108, 111, 115, 0.1);
+}
+
