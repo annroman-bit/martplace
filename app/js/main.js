@@ -1,11 +1,4 @@
-$(function () {
-
-
-  const ul = document.querySelector('ul.categories__list');
-  ul.addEventListener('click', evt => {
-    const ulSibling = evt.target.nextElementSibling;
-    slideToggle.slideToggle(ulSibling, 500);
-  });
+$(function () { 
 
 
   $(".rate-star").rateYo({
@@ -19,7 +12,23 @@ $(function () {
     slidesToShow: 1,
     slidesToScroll: 1,
     dots: false,
-    arrows: true
+    arrows: true,
+    autoplay: true,
+    autoplaySpeed: 5000
+  });
+
+  $('.followers__slider').slick({
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    dots: false,
+    arrows: true,
+    autoplay: true,
+    autoplaySpeed: 5000    
+  });
+
+  $('.categories').on('click', function(){
+    $('.categories__list').slideToggle();
   });
 
 });
