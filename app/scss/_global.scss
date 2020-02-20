@@ -1,5 +1,10 @@
 html{
   box-sizing: border-box;
+  height: 100%;
+}
+* {
+	margin: 0;
+	padding: 0;
 }
 *,
 *::before,
@@ -13,6 +18,7 @@ body{
   line-height: 30px;
   color: $text;
   overflow-x: hidden;
+  height: 100%;
 }
 a{
   display: inline-block;
@@ -34,7 +40,17 @@ ul, li{
   margin: 0 auto;
   padding: 0 15px;
 }
-
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+.content {
+	flex: 1 0 auto;
+}
+.footer {
+	flex: 0 0 auto;
+}
 
 
 

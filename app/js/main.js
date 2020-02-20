@@ -31,4 +31,6 @@ $(function () {
     $('.categories__list').slideToggle();
   });
 
+
+  
 });
